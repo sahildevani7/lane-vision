@@ -1,0 +1,257 @@
+/* Main App Styles */
+.App {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.app-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.app-subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+/* Upload Section */
+.upload-section {
+  text-align: center;
+}
+
+.upload-section h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.upload-description {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+/* Upload Controls */
+.upload-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.file-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.file-input-label {
+  display: block;
+  padding: 12px 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-input-label:hover {
+  background-color: #e6e6e6;
+}
+
+.file-name {
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Buttons */
+.process-btn, .stop-btn, .restart-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.process-btn {
+  background-color: #0a9396;
+  color: white;
+}
+
+.process-btn:hover:not(:disabled) {
+  background-color: #087f82;
+}
+
+.stop-btn {
+  background-color: #e63946;
+  color: white;
+}
+
+.stop-btn:hover {
+  background-color: #d32638;
+}
+
+.restart-btn {
+  background-color: #4361ee;
+  color: white;
+}
+
+.restart-btn:hover {
+  background-color: #3a56d4;
+}
+
+.process-btn:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+/* Status Message */
+.status-message {
+  color: #0a9396;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.status-message.success {
+  color: #2a9d8f;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Video Display */
+.video-display {
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+  min-height: 350px;
+}
+
+.video-player, .processed-result {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
+}
+
+.video-element, .result-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Placeholder Overlay */
+.placeholder-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .upload-section {
+    flex: 1;
+    max-width: 350px;
+    border-right: 1px solid #e0e0e0;
+    padding-right: 25px;
+  }
+
+  .video-display {
+    flex: 2;
+    margin-top: 0;
+    margin-left: 25px;
+  }
+
+  .upload-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-input-container {
+    width: 100%;
+  }
+}
+
+/* Canvas (hidden) */
+canvas {
+  display: none;
+}
